@@ -8,6 +8,7 @@
 - Gmail
 - Sms
 - Logging
+- Contacts
 
 --- # Definitions
 Day: 
@@ -52,6 +53,7 @@ Doctors List:
     - Statistic     # non-editable
 
 Scheduler: 
+  - user should be able to create schedule using `Doctor`, `Day`
   - should generate schedule for each day in weekly/ monthly/ daily basis. 
   - 
 

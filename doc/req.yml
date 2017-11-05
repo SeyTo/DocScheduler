@@ -1,0 +1,61 @@
+--- # Libraries, Knowledge needed
+- Calendar in BS and AD
+- Sqlite Interconnected Tables
+- Google SpreadSheet
+- SpreadSheet export
+- PDF export
+- Google Account Connection
+- Gmail
+- Sms
+- Logging
+
+--- # Definitions
+Day: 
+  - Each day consists of 24 hrs that a collective Doctor must fulfill.
+  - Each day may consists of 'n' count of Doctors.
+Month:
+  - Each month has total hours *idform010.
+  - Each month generates `Salary.Basic`.
+  - Each month generates `Salary.Total`.
+Duty: 
+Salary:
+  - Salary is based on a fixed digit in Currency form. [Salary.Factor]
+  - Basic salary is calculated   [Salary.Basic]
+  - Total salary is calculated each month using *idform010 [Salary.Total]
+Doctor:  
+  - Each doctor can have 24 hrs Duty at most per `Day`.
+  - Each doctor is identified by a unique `Id`.
+  - Each doctor is allocated `Salary` using  *idform001.
+  - Each doctor is allocated `Salary.Factor` upon which the basic salary is announced.
+  
+--- # Formulas
+FORM-001: &idform001
+  
+FORM-010: &idform010
+  formula: |
+      24 * Days in that Month 
+  description: 'Calculate total hours per month' 
+
+
+--- # Requirements
+Salary Sheet:
+  - should have 'Comments' for each Day.
+
+Doctors List:
+  - should be able to create/edit/delete `Doctor`.
+  - should contain the following information:
+    - Id            # unique, primary key, non-editable,
+    - Name          # editable,
+    - Basic Salary  # format currency, editable 
+    - Duty Hours    # format date, editable
+    - Total Hours   # format *id0010, non-editable
+    - Statistic     # non-editable
+
+Scheduler: 
+  - should generate schedule for each day in weekly/ monthly/ daily basis. 
+  - 
+
+Formats:
+  - Time format: &id0010
+      - should be able to display in monthly, yearly or daily basis.
+
